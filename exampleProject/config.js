@@ -16,3 +16,11 @@ exports.persistent_storage_method = 'disk';
 // Default: '/tmp/'
 exports.persistent_storage_location = './storage/';
 
+// Minutes before sessions expire
+// Default: 120
+exports.session_expire_minutes = 120;
+
+// Name of the cookie to use for session
+// Default: 'session_key'
+// exports.session_cookie_name = 'session_key';
+
