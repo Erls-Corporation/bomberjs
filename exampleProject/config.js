@@ -14,7 +14,7 @@ exports.signing_secret = "";
 // Configuration for persistent storage for session and users
 // (at the moment, only on-disk storage is available)
 // Default: 'disk'
-exports.persistent_storage_method = 'disk';
+// exports.persistent_storage_method = 'disk';
 
 // For disk storage, this is the path a folder
 // Default: '/tmp/'
@@ -25,11 +25,11 @@ exports.persistent_storage_location = './storage/';
 
 // Minutes before sessions expire
 // Default: 60
-exports.session_expire_minutes = 3;
+exports.session_expire_minutes = 60;
 
 // Minutes before a session is renewed
 // Default: 5
-exports.session_renew_minutes = 1;
+exports.session_renew_minutes = 5;
 
 // Name of the cookie to use for session
 // Default: 'session_key'
