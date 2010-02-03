@@ -1,49 +1,60 @@
 
-// *** BASIC CONFIGURATION *** 
+/* SERVER */
+exports.server = {
+  // Port to run node server on 
+  // Fefault: 8400
+  port: 8400
+}
 
-// Port to run node server on (default 8400)
-// exports.port = 8400;
-
-// A secret key to sign sessions, cookies, password etc. 
-// Make sure you set this, and that you keep the secret -- well, secret
-exports.signing_secret = "";
-
-
-// *** PERSISTENT STORAGE *** 
-
-// Configuration for persistent storage for session and users
-// (at the moment, only on-disk storage is available)
-// Default: 'disk'
-// exports.persistent_storage_method = 'disk';
-
-// For disk storage, this is the path a folder
-// Default: '/tmp/'
-exports.persistent_storage_location = './storage/';
+/* SECURITY */
+exports.security = {
+  // A secret key to sign sessions, cookies, password etc. 
+  // Make sure you set this, and that you keep the secret -- well, secret
+  signing_secret: ""
+}
 
 
-// *** SESSIONS *** 
+/* PERSISTENT STORAGE */
+exports.persistent_storage = {
+  // Configuration for persistent storage for session and users
+  // Options are 'disk' and 'couchdb'
+  // Default: 'disk'
+  method: 'disk',
 
-// Minutes before sessions expire
-// Default: 60
-exports.session_expire_minutes = 60;
+  // Options for the persistent storage method
+  // Default: {location:'/tmp/'}
+  options: {
+    location: './storage/'
+   }
+}
 
-// Minutes before a session is renewed
-// Default: 5
-exports.session_renew_minutes = 5;
 
-// Name of the cookie to use for session
-// Default: 'session_key'
-// exports.session_cookie_name = 'session_key';
+// SESSIONS
+exports.session = {
+  // Minutes before sessions expire
+  // Default: 60
+  expire_minutes: 60,
 
-// Domain for the session cookie
-// Default: ''
-// exports.session_cookie_domain = '';
+  // Minutes before a session is renewed
+  // Default: 5
+  renew_minutes: 5,
 
-// Path for the session cookie
-// Default: '/'
-// exports.session_cookie_path = '/';
-
-// Whether to require session cookies only to be sent over secure connections (Boolean)
-// Default: false
-// exports.session_cookie_secure = false;
+  cookie: {
+    // Name of the cookie to use for session
+    // Default: 'session_key'
+    name: 'session_key',
+    
+    // Domain for the session cookie
+    // Default: ''
+    domain: '',
+    
+    // Path for the session cookie
+    // Default: '/'
+    path: '/',
+    
+    // Whether to require session cookies only to be sent over secure connections (Boolean)
+    // Default: false
+    secure: false
+  }
+}
 
